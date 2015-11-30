@@ -5,7 +5,7 @@ var React = require('react'),
     IconLink = require('../components/icon-link.jsx'),
     BadgeVerticalIcon = require('../components/badge-vertical-icon.jsx'),
     Link = require('react-router').Link,
-    BadgesAPI  = require('../lib/badges-api'),
+    BadgesAPI  = require('../lib/badges-api.js'),
     _ = require('underscore');
 
 var BadgesPage = React.createClass({
@@ -14,11 +14,16 @@ var BadgesPage = React.createClass({
         pageClassName: 'badges'
     },
     componentDidMount : function(){
-        console.log('@badges will be mounted here!');
-        this.BadgeInterface = new BadgesAPI('312');
 
-        this.BadgeInterface.myBadges({}, function (error,result) {
-            console.log('@James:', result);
+        /**
+         * @TODO: these calls are for testing only
+         */
+        this.BadgeInterface = new BadgesAPI('312');
+        this.BadgeInterface.myBadges({}, function (error, result) {
+            console.log('@James:', result, error);
+        });
+        this.BadgeInterface.findBadges({}, function (error, result) {
+            console.info( error,result , '@badges' );
         });
     },
     getInitialState: function () {
