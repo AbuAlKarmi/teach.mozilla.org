@@ -99,8 +99,5 @@
   "bugs": {
     "url": "https://github.com/mozilla/teach.mozilla.org/issues"
   },
-  "homepage": "https://github.com/mozilla/teach.mozilla.org",
-  "engines": {
-    "node": "5.2.0"
-  }
+  "homepage": "https://github.com/mozilla/teach.mozilla.org"
 }
